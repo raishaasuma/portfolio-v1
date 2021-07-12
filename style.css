@@ -1,0 +1,259 @@
+@font-face {
+    font-family: mont-bold;
+    src: url(montserrat-font/MontserratBlack-3zOvZ.ttf);
+}
+
+@font-face {
+    font-family: mont-light;
+    src: url(montserrat-font/MontserratRegular-RpK6l.otf);
+}
+
+@font-face {
+    font-family: volkorn;
+    src: url(vollkorn-font/VollkornBold-4By74.otf);
+}
+
+body {
+    margin: 0px;
+    /* padding: 0px; */
+    min-height: 100vh;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+/* ----- NAV BAR ------ */
+
+nav {
+    z-index: 1;
+    /* overflow: hidden; */
+    box-shadow: #4b8585 1px 1px 5px;
+    padding-top: 10px;
+    font-family: mont-light;
+    /* margin-top: none; */
+    text-align: justify;
+    position: fixed;
+    width:100%;
+    background-color: #FFF;
+}
+
+nav:after {
+    content: '  ';
+    display: inline-block;
+    width: 100%;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: 15% 15% 15% 30%;
+    gap: 20px;
+}
+
+.nav-item {
+    display: inline-block;
+    text-align: center;
+}
+
+.nav-link {
+    color: #4b8585;
+}
+
+.nav-link:hover {
+    border-bottom: #FFBCBC 1px solid;
+    padding-bottom: 5px;
+}
+
+.nav-ul {
+    border: #FFBCBC 1px solid;
+    align-content: center;
+    padding: 10px 0px;
+}
+
+.resume-btn {
+    color: white;
+    background-color: #FFBCBC ;
+    padding: 10px 12px;
+    box-shadow: #F38BA0 3px 3px 4px;
+}
+
+.resume-link {
+    color: white;
+}
+
+.resume-btn:hover {
+    box-shadow: #FFBCBC 2px 2px 4px;
+    background-color: #F38BA0;
+}
+
+/* ----- MAIN CONTENT ----- */
+
+section {
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100vw;
+}
+
+a {
+    text-decoration: none;
+}
+
+#home {
+    font-family: mont-bold;
+    background-color: #B5EAEA;
+}
+
+.banner-box {
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%); 
+    transform: translate(-50%, -50%);
+    outline: 8px solid white;
+    width: 85%;
+    height: 55%;
+    text-align: center;
+}
+
+.about-text-1 {
+    letter-spacing: 4px;
+    font-size: 24px;
+    text-align: center;
+    text-shadow: #4b8585 1px 1px 2px;
+
+}
+
+.about-text-2 {
+    letter-spacing: 10px;
+    font-size: 42px;
+    text-align: center;
+    text-shadow: #F38BA0 3px 3px ;
+}
+
+.about-text-3 {
+    letter-spacing: 4px;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: #4b8585 1px 1px 1px;
+    margin-bottom: 70px;
+}
+
+/* VIEW PORTFOLIO BUTTON */
+.view-portfolio-btn {
+	color: #FFF;
+    text-shadow: #F38BA0 1px 1px 1px;
+	transition: all 0.5s;
+    position: relative;
+    line-height: 40px;
+	height: 40px;
+	text-align: center;
+	width: 200px;
+	cursor: pointer;
+    margin: auto;
+    letter-spacing: 2px;
+    font-size: 18px;
+    padding: 15px;
+}
+.view-portfolio-btn::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-color: rgba(156, 156, 156, 0.014);
+	transition: all 0.3s;
+    border: 1px solid #FFF;
+    border-collapse: separate;
+    /* border-radius: 5px; */
+}
+.view-portfolio-btn:hover::before {
+	opacity: 0 ;
+	transform: scale(0.5,0.5);
+}
+.view-portfolio-btn::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border: 2px solid rgba(255, 255, 255, 0.712);
+	transform: scale(1.2,1.2);
+    background-color: rgba(255, 255, 255, 0.158);
+    border-collapse: separate;
+    /* border-radius: 10px; */
+}
+.view-portfolio-btn:hover::after {
+	opacity: 1;
+	transform: scale(1,1);
+}
+
+.section-content {
+    height: 70%;
+    width: 90%;
+    background-color: #ffffff6b;
+    -webkit-transform: translate(-50%); 
+    transform: translate(-50%, -45%);
+    position: relative;
+    left: 50%;
+    top: 50%;
+}
+
+#work {
+    background-color: #EDF6E5;
+}
+
+#about {
+    background-color: #FFBCBC;
+}
+
+#contact {
+    background-color: #F38BA0;
+}
+
+
+@media (min-width: 800px){
+    ul {
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+
+    .banner-box {
+        width: 85%;
+        height: 50%;
+    }
+
+    .about-text-1 {
+        letter-spacing: 4px;
+        font-size: 24px;
+        text-shadow: #4b8585 1px 1px 2px;
+    
+    }
+    
+    .about-text-2 {
+        letter-spacing: 12px;
+        font-size: 56px;
+        text-shadow: #F38BA0 4px 4px ;
+    }
+    
+    .about-text-3 {
+        letter-spacing: 4px;
+        font-size: 36px;
+        text-shadow: #4b8585 1px 1px 1px;
+        margin-bottom: 50px;
+    }
+
+    .view-portfolio-btn {
+        padding: 25px;
+    }
+}
+
+@media (min-width: 900px) {
+
+}
